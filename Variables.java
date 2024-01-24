@@ -4,20 +4,12 @@ public class Variables {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         
-        int num1, num2;
+        // int num1, num2;
 
-        // Get first number
-        System.out.print("Enter first number: ");
-        num1 = input.nextInt();
-
-        // Get second number
-        System.out.print("Enter second number: ");
-        num2 = input.nextInt();
 
         // Instantiate the MathOps Class...
         MathOps obj = new MathOps();
-        obj.addTwoNums(num1, num2);
-
+        // obj.addTwoNums(num1, num2);
 
 
         // Close stream
@@ -30,5 +22,14 @@ class MathOps {
         int result = a + b;
         System.out.printf("Sum of %d and %d = %d\n", a, b, result);
         System.out.println("Sum of " + a + " and " + b + " =" + result);
+    }
+
+    public void test(int ...nums) {
+        int sum = 0;
+        for (int num : nums) {
+            sum = sum + num;
+        }
+
+        System.out.println(sum);
     }
 }
