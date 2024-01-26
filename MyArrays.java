@@ -53,14 +53,13 @@ class MultiDimensionalArray {
         //         multi[i][j] = input.nextInt();
         //     }
         // }
-        int sum = 0;
+        // int sum = 0;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 4; j++) {
-                sum += multi[i][j];
+                System.out.print(multi[i][j] + " ");
             }
+            System.out.println();
         }
-
-        System.out.println(sum);
 
         // System.out.println(Arrays.deepToString(multi));
 
