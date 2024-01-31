@@ -1,7 +1,26 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Customer extends Bank {
+public class Customer {
+    String name;
+    String location;
+    int accountNumber;
+    int bvn;
+    double balance = 0.00;
+    String state;
+    int atmPin;
+    int transferPin;
+    String country;
+    String DOB;
+    String emailAddress;
+    String address;
+    String phoneNumber;
+    String nextOfKin;
+    String gender;
+    String accountType;
+    String occupation;
+    final int ADMINPIN = 1002;
+
     public void createAccount() {
         Scanner input = new Scanner(System.in);
         Random rand = new Random();

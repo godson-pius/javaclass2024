@@ -1,37 +1,19 @@
 import java.util.Scanner;
 
 public class Bank {
-    String name;
-    String location;
-    int accountNumber;
-    int bvn;
-    double balance = 0.00;
-    String state;
-    int atmPin;
-    int transferPin;
-    String country;
-    String DOB;
-    String emailAddress;
-    String address;
-    String phoneNumber;
-    String nextOfKin;
-    String gender;
-    String accountType;
-    String occupation;
-    final int ADMINPIN = 1002;
-
-    static Scanner input = new Scanner(System.in);
+    Scanner input = new Scanner(System.in);
 
     // Create a constructor...
     Bank() {
         System.out.println("Welcome to Laptop Bank (LB)");
+        landing();
     }
 
     public static void main(String[] args) {
-
+        Bank bank = new Bank();
     }
 
-    public static void landing() {
+    public void landing() {
         Customer customer = new Customer();
 
         System.out.println("1. Create an account with LB");
@@ -44,7 +26,9 @@ public class Bank {
         System.out.println("8. Withdraw funds");
         System.out.println("9. Request for loan");
         System.out.println("10. Quit app");
-
+        
+        
+        System.out.print("Make choice: ");
         int choice = input.nextInt();
         switch (choice) {
             case 1:
