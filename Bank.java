@@ -1,9 +1,13 @@
 public class Bank {
     String name;
     String location;
+
+    // Not fulfilled... RAND
     int accountNumber;
+    // Not fulfilled... RAND
     int bvn;
-    double balance;
+    double balance = 0.00;
+    
     String state;
     int atmPin;
     int transferPin;
@@ -18,8 +22,11 @@ public class Bank {
     String occupation;
     final int ADMINPIN = 1002;
 
-    //Customer class
-    public void createAccount() {}
+    //Create a constructor...
+    Bank() {
+        System.out.println("Welcome to Laptop Bank (LB)");
+    }
+    
     //Customer class
     public void editAccount() {}
     //Customer class
@@ -48,5 +55,4 @@ public class Bank {
     public void viewCustomers() {}
     //Admin class
     public void creditAccount() {}
-
 }
