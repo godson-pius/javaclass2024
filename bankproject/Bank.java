@@ -1,3 +1,5 @@
+package bankproject;
+
 import java.util.Scanner;
 
 public class Bank {
@@ -5,12 +7,8 @@ public class Bank {
 
     // Create a constructor...
     Bank() {
-        System.out.println("Welcome to Laptop Bank (LB)");
+        System.out.println("Welcome to Laptop Bank... (LB)");
         landing();
-    }
-
-    public static void main(String[] args) {
-        Bank bank = new Bank();
     }
 
     public void landing() {
@@ -37,7 +35,7 @@ public class Bank {
             case 2:
                 // Sign In.
             case 10:
-                System.out.println("Thank you for banking with Laptop Bank..");
+                System.out.println("Thank you for banking with Laptop bank..");
             default:
                 System.out.println("Invalid choice....");
                 break;
@@ -45,27 +43,27 @@ public class Bank {
 
     }
 
-    // Customer class
+    // bankproject.Customer class
     public void editAccount() {
     }
 
-    // Customer class
+    // bankproject.Customer class
     public void viewAccount() {
     }
 
-    // Customer class
+    // bankproject.Customer class
     public void checkBalance() {
     }
 
-    // Customer class
+    // bankproject.Customer class
     public void deleteAccount() {
     }
 
-    // Customer class
+    // bankproject.Customer class
     public void login() {
     }
 
-    // Customer class
+    // bankproject.Customer class
     public void logout() {
     }
 
