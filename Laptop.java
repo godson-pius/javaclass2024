@@ -13,6 +13,12 @@ public class Laptop {
 
     public void powerOn() {
         System.out.println("Booting the device...");
+        // class
+        class Inner {
+            Inner() {
+                System.out.print("From inner class");
+            }
+        }
     }
 
     public void powerOff() {
