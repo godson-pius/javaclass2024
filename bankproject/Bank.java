@@ -3,7 +3,7 @@ package bankproject;
 import java.util.Scanner;
 
 public class Bank {
-    Scanner input = new Scanner(System.in);
+    static Scanner input = new Scanner(System.in);
 
     // Create a constructor...
     Bank() {
@@ -11,7 +11,7 @@ public class Bank {
         landing();
     }
 
-    public void landing() {
+    static public void landing() {
         Customer customer = new Customer();
 
         System.out.println("1. Create an account with LB");
@@ -33,7 +33,7 @@ public class Bank {
                 customer.createAccount();
                 break;
             case 2:
-                // Sign In.
+                customer.signIn();
             case 10:
                 System.out.println("Thank you for banking with Laptop bank..");
             default:

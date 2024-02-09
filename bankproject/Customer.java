@@ -22,9 +22,9 @@ public class Customer {
     String accountType;
     String occupation;
     final int ADMINPIN = 1002;
+    Scanner input = new Scanner(System.in);
 
     public void createAccount() {
-        Scanner input = new Scanner(System.in);
         Random rand = new Random();
 
         try {
@@ -66,6 +66,11 @@ public class Customer {
             while (state) {
                 System.out.print("Enter your ATM PIN: ");
                 String pin = input.next();
+
+                if (pin.length() != 4) {
+                    System.out.println("Pin must be 4 digits");
+                    continue;
+                }
                 try {
                     this.atmPin = Integer.parseInt(pin);
                     state = false;
@@ -74,19 +79,71 @@ public class Customer {
                 }
             }
 
-            System.out.print("Enter your transfer pin: ");
-            this.transferPin = input.nextInt();
+            boolean stateForTransferPin = true;
+            while (stateForTransferPin) {
+                System.out.print("Enter your Transfer PIN: ");
+                String pin = input.next();
+
+                if (pin.length() != 4) {
+                    System.out.println("Pin must be 4 digits");
+                    continue;
+                }
+                try {
+                    this.transferPin = Integer.parseInt(pin);
+                    stateForTransferPin = false;
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+
 
             // Create account number:
-            this.accountNumber = rand.nextInt(10);
+            this.accountNumber = Helper.generateNum();
+//            this.accountNumber = Math;
 
             // Create BVN
-            this.bvn = rand.nextInt(11);
+            this.bvn = Helper.generateNum();
+
+            System.out.printf("Your account number is: %d\n", this.accountNumber);
+            System.out.printf("Your BVN is: %d\n", this.bvn);
+            System.out.printf("Your Balance is: %f\n", this.balance);
+
+            System.out.println("========================= \n\n");
+            signIn();
 
             input.close();
         } catch(Exception e) {
 //            createAccount();
             System.out.println(e.getMessage());
+        }
+    }
+
+    public void signIn() {
+        System.out.println("======= Login to dashboard ========");
+        try {
+            System.out.print("Enter account number: ");
+            int accNum = input.nextInt();
+
+            System.out.print("Enter account pin: ");
+            int accPin = input.nextInt();
+
+            while (accNum != this.accountNumber) {
+                while (accPin != this.atmPin) {
+                    System.out.println("Invalid Credentials");
+
+                    System.out.print("Enter account number: ");
+                    accNum = input.nextInt();
+
+                    System.out.print("Enter account pin: ");
+                    accPin = input.nextInt();
+                }
+            }
+
+            System.out.println("Logged in successful!\n\n\n");
+            Bank.landing();
+
+        } catch(Exception e) {
+            signIn();
         }
     }
 }
